@@ -1,73 +1,112 @@
-# React + TypeScript + Vite
+# FinTrack Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface web para gerenciamento financeiro, desenvolvida com React, TypeScript, Vite, Firebase, Tailwind CSS e Recharts.
 
-Currently, two official plugins are available:
+O projeto permite autenticação com Google, visualização de dashboard financeiro, acompanhamento de receitas e despesas, listagem de transações e cadastro de novas movimentações financeiras.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Demonstração
 
-## React Compiler
+A aplicação conta com as seguintes telas principais:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Página inicial
+* Login com Google
+* Dashboard financeiro
+* Listagem de transações
+* Cadastro de nova transação
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* Autenticação com Google utilizando Firebase Authentication
+* Proteção de rotas privadas
+* Integração com API autenticada por token
+* Dashboard com saldo, receitas e despesas
+* Gráfico de despesas por categoria
+* Gráfico de histórico mensal
+* Listagem de transações
+* Busca de transações
+* Cadastro de receitas e despesas
+* Seleção dinâmica de categorias por tipo de transação
+* Exclusão de transações
+* Notificações com React Toastify
+* Componentização de interface
+* Formatação de moeda e data
+* Estilização com Tailwind CSS
+* Padronização de código com Biome
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tecnologias utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* Firebase
+* Axios
+* Recharts
+* React Router
+* React Toastify
+* Lucide React
+* Biome
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Estrutura do projeto
+
+```txt
+fin-track-interface/
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── src/
+│   ├── assets/
+│   │   └── hero.png
+│   ├── components/
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GoogleLoginButton.tsx
+│   │   ├── Header.tsx
+│   │   ├── Input.tsx
+│   │   ├── MonthYearSelect.tsx
+│   │   ├── Select.tsx
+│   │   └── TransactionTypeSelector.tsx
+│   ├── config/
+│   │   └── firebase.ts
+│   ├── context/
+│   │   └── AuthContext.tsx
+│   ├── layout/
+│   │   └── AppLayout.tsx
+│   ├── pages/
+│   │   ├── Dashboard.tsx
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── Transactions.tsx
+│   │   └── TransactionsForm.tsx
+│   ├── routes/
+│   │   ├── index.tsx
+│   │   └── PrivateRoutes.tsx
+│   ├── services/
+│   │   ├── api.ts
+│   │   ├── categoryService.ts
+│   │   └── transactionService.ts
+│   ├── types/
+│   │   ├── auth.ts
+│   │   ├── category.ts
+│   │   └── transactions.ts
+│   ├── utils/
+│   │   └── formatter.ts
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .env.example
+├── .gitignore
+├── biome.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Autor
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+André Vinícius Branches Cunha
